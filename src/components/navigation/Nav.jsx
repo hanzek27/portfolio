@@ -1,6 +1,6 @@
 import React from 'react'
 import ConsoleButton from '../buttons/ConsoleButton'
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 
 const navAnimation = {
   initial: {
@@ -38,7 +38,7 @@ const itemsAnimation = {
   },
 }
 
-export default function Nav({ changeMode }) {
+export default function Nav({ changeMode, setNav }) {
 
   const navButtons = [
     {action: '/', text: 'cd homepage'},
@@ -48,7 +48,9 @@ export default function Nav({ changeMode }) {
   ]
 
   return (
-    <motion.nav 
+    <motion.nav
+      onClick={()=> setNav(false)}
+      key='navigation'
       variants={navAnimation} 
       initial='initial' 
       animate='open' 

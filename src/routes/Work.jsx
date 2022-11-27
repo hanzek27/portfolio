@@ -1,17 +1,43 @@
 import React, { useState, useEffect } from 'react'
-import { NavLink, useOutletContext } from 'react-router-dom';
+import { NavLink, useOutletContext, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from "framer-motion"
 import { Arrow, Cli, Heart, Design } from '../components/Icons';
+import ConsoleGraphics from '../components/ConsoleGraphics';
 const MotionNavLink = motion(NavLink)
 
 const buttonAnimations = {
   initial: {
-    y: -20,
+    transition: {
+      when: "afterChildren",
+      staggerChildren: 0.03,
+    },
+  },
+  onScreen: {
+    transition: {
+      when: 'beforeChildren',
+      staggerChildren: 0.1,
+    }
+  },
+  out: {
+    transition: {
+      when: "afterChildren",
+      staggerChildren: 0.05,
+    },
+  }
+}
+
+const buttonsIll = {
+  initial: {
+    x: 100,
     opacity: 0,
   },
-  enter: {
-    y: 0,
+  onScreen: {
+    x: 0,
     opacity: 1,
+  },
+  out: {
+    x: 50,
+    opacity: 0,
   }
 }
 
@@ -31,32 +57,31 @@ const illustrationan = {
 }
 
 export default function Work() {
+  const { pathname } = useLocation()
   const [setNav] = useOutletContext()
-  useEffect(()=>{setNav(false)},[])
 
   const [hover, setHover] = useState('/webdevelopement')
   const workButtons = [
     {action: '/work/webdevelopement', name: '/webdevelopement', text: 'web_developement', icon: Cli},
-    {action: '/', name: '/graphicdesign', text: 'graphic_design', icon: Design},
-    {action: '/', name: '/whatilike', text: 'what_I_like', icon: Heart},
+    {action: '/work/graphicdesign', name: '/graphicdesign', text: 'graphic_design', icon: Design},
+    {action: '/work/whatilike', name: '/whatilike', text: 'what_I_like', icon: Heart},
   ]
   return (
-    <div className='h-full w-full grid grid-rows-4 grid-cols-2'>
-      <article className='col-span-2 row-span-2 md:col-span-1 md:row-span-2 md:row-start-2   pl-text-sm md:pl-text-md lg:pl-text-lg flex flex-col justify-start'>
-        <p className='font-console text-paragraph text-decor-light dark:text-decor-dark'>........</p>
-        <p className='font-console text-paragraph text-decor-light dark:text-decor-dark'>portfolio v-1.0.0</p>
-        <p className='font-console text-paragraph text-decor-light dark:text-decor-dark'>homepage</p>
-        <motion.div variants={buttonAnimations} initial='initial' animate='enter' exit='initial' className='flex flex-col items-left gap-5 w-max'>
+    <motion.section className='h-full w-full grid grid-rows-4 grid-cols-2'>
+      <ConsoleGraphics location={pathname} classn='row-start-4 pl-text-sm mt-sm' />
+      <article className='col-span-2 row-span-1 row-start-3 md:col-span-1 md:row-span-2 md:row-start-2   pl-text-sm md:pl-text-md lg:pl-text-lg  flex flex-col justify-center'> 
+      
+        <motion.div variants={buttonAnimations} initial='initial' animate='onScreen' exit='out' className='flex flex-col items-left gap-5 w-max'>
           {workButtons.map(button => (
-            <MotionNavLink to={button.action} key={button.text} name={button.name} whileHover={{scaleX: 1.1, x: 10}} onHoverStart={(e)=> setHover(e.target.name)} className='w-max flex items-center gap-3 py-2 text-button text-main-light dark:text-main-dark'>
+            <MotionNavLink variants={buttonsIll} to={button.action} key={button.text} name={button.name} whileHover={{scale: 1.2, originX: 0}} onHoverStart={(e)=> setHover(e.target.name)} className='w-max flex items-center gap-3 py-2 text-button text-main-light dark:text-main-dark'>
               <Arrow width='8px' />
               <span>{button.text}</span>
             </MotionNavLink>
           ))}
         </motion.div>
       </article>
+
       <div className='col-span-2 row-start-1 row-span-2    md:col-span-1 md:col-start-2 md:row-span-2 md:row-start-2 flex justify-center items-center relative pr-sm md:pr-none'>
-        <AnimatePresence>
         {workButtons.map(button => {
           const Icon = button.icon
           return button.name === hover && (
@@ -65,10 +90,7 @@ export default function Work() {
             </motion.div>
           )
         })}
-        </AnimatePresence>
       </div>
-    </div>
+    </motion.section>
   )
 }
-
-//{button.text === hover && <Arrow width='8px' />}
