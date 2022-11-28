@@ -81,7 +81,7 @@ export default function Work() {
         </motion.div>
       </article>
 
-      <div className='col-span-2 row-start-1 row-span-2    md:col-span-1 md:col-start-2 md:row-span-2 md:row-start-2 flex justify-center items-center relative pr-sm md:pr-none'>
+      <div className='col-span-2 row-start-1 row-span-2 md:col-span-1 md:col-start-2 md:row-span-2 md:row-start-2 flex justify-center items-center relative pr-sm md:pr-none'>
         {workButtons.map(button => {
           const Icon = button.icon
           return button.name === hover && (
