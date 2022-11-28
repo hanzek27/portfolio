@@ -8,6 +8,14 @@ export function Home({width, height}) {
   )
 }
 
+export function Back({width, height}) {
+  return (
+    <svg className='fill-accent-blue' width={width} height={height} viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M12.5 25C19.4036 25 25 19.4036 25 12.5C25 5.59644 19.4036 0 12.5 0C5.59644 0 0 5.59644 0 12.5C0 19.4036 5.59644 25 12.5 25ZM13.6048 8.91736C14.215 8.30716 14.215 7.31784 13.6048 6.70764C12.9947 6.09745 12.0053 6.09745 11.3951 6.70764L6.70764 11.3951C6.09745 12.0053 6.09745 12.9947 6.70764 13.6048L11.3951 18.2923C12.0053 18.9025 12.9947 18.9025 13.6048 18.2923C14.215 17.6822 14.215 16.6928 13.6048 16.0827L11.5847 14.0625H17.1875C18.0505 14.0625 18.75 13.363 18.75 12.5C18.75 11.6371 18.0505 10.9375 17.1875 10.9375H11.5847L13.6048 8.91736Z"/>
+    </svg>
+  )
+}
+
 export function Cli({width, height, fill}) {
   return (
     <svg className={fill ? fill : 'fill-accent-blue'} width={width} height={height} viewBox="0 0 30 29" xmlns="http://www.w3.org/2000/svg">

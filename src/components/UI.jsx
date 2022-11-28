@@ -5,6 +5,8 @@ import { motion, AnimatePresence, MotionConfig } from "framer-motion"
 import LineNumbers from "./LineNumbers";
 import NavButton from "./buttons/NavButton";
 import Nav from "./navigation/Nav";
+import BackButton from "./buttons/BackButton";
+import {AnimatedText} from "./animatedText";
 import { Home, Cli, Dark } from "./Icons";
 
 export default function UI() {
@@ -22,28 +24,38 @@ export default function UI() {
   const [nav, setNav] = useState(false)
 
   return (
-    <main className="relative h-screen grid grid-cols-layout grid-rows-layout p-page-sm md:p-page-md lg:p-page-lg bg-light dark:bg-dark overflow-hidden">
+    <main className="h-screen relative grid grid-cols-layout grid-rows-layout bg-light dark:bg-dark overflow-hidden p-page-sm md:p-page-md lg:p-page-lg">
       <div className="flex items-center justify-center">
-        <Home width='25px' height='25px' />
+        <BackButton />
       </div>
-      <div className="flex items-center pl-text-sm">
-        <h3 className="font-main text-logo text-main-light dark:text-main-dark mr-auto">my\portfolio</h3>
+      <div className="flex justify-between px-sm items-center">
+        <AnimatedText text={`home${ pathname }`} />
+        
+        <span className="font-console text-console text-decor-light dark:text-decor-dark">--nav</span>
+      </div>
+      <div className="flex items-center relative">
         <NavButton onClick={()=> setNav(prev => !prev)} nav={nav} />
         <AnimatePresence key='navigation'>
-        {nav && (<Nav changeMode={changeMode} setNav={setNav} />)}
+          {nav && (<Nav changeMode={changeMode} setNav={setNav} />)}
         </AnimatePresence>
       </div>
-      <div id='numbersContainer' className="overflow-hidden">
+      <div id='numbersContainer' className="overflow-hidden py-3">
         <LineNumbers/>
       </div>
-      <div className="w-full">
+      <div className="w-full h-full">
         <Outlet context={[setNav]} />
+      </div>
+      <div className="flex flex-col justify-between items-center py-sm">
+        <span className="relative top-[20px] w-max font-console text-console text-decor-light dark:text-decor-dark rotate-side origin-top-center">--open</span>
+        <span className="relative bottom-[80px] w-max font-console text-console text-decor-light dark:text-decor-dark rotate-side">all rights reserved</span>
       </div>
       <div className="flex items-center justify-center">
         <Cli width='30px' />
       </div>
       <div className="flex items-center">
         <h3 className="font-console text-console text-main-light dark:text-main-dark mr-auto pl-text-sm">my\portfolio</h3>
+      </div>
+      <div>
         <Dark width='25px' mode={mode} onClick={changeMode} />
       </div>
     </main>

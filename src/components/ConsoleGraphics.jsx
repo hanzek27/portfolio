@@ -55,5 +55,3 @@ export default function ConsoleGraphics({classn, location}) {
     </motion.div>
   )
 }
-
-//<motion.p variants={children} className='font-console text-paragraph text-decor-light dark:text-decor-dark'>........</motion.p>

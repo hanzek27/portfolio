@@ -30,8 +30,8 @@ module.exports = {
         letterSpacing: '0',
         fontWeight: '500',
       }],
-      'console': ['0.94rem', {
-        lineHeight: '0.94rem',
+      'console': ['0.8rem', {
+        lineHeight: '0.8rem',
         letterSpacing: '0',
         fontWeight: '400',
       }],
@@ -48,6 +48,9 @@ module.exports = {
     },
     borderRadius: {
       'medium': '10px',
+    },
+    rotate: {
+      'side': '-90deg',
     },
     extend: {
       colors: {
@@ -89,12 +92,13 @@ module.exports = {
         'md': '60px',
         'lg': '100px',
         'xl': '150px',
+        'navWidth': 'calc(100vw - 110px)',
       },
       gridTemplateColumns: {
-        'layout': '30px minmax(50px, 1fr)',
+        'layout': '30px minmax(50px, 1fr) 30px',
       },
       gridTemplateRows: {
-        'layout': '30px minmax(600px, 1fr) 30px',
+        'layout': '30px minmax(0, 1fr) 30px',
       }
     },
   },

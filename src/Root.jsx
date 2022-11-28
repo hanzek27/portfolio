@@ -5,7 +5,7 @@ import { AnimatePresence } from 'framer-motion'
 import UI from './components/UI'
 import Home from './routes/Home'
 import Work from './routes/Work'
-import AboutMe from './routes/AboutMe'
+import Contacts from './routes/Contacts'
 import Webdevelopement from './pages/Webdevelopement'
 import GraphicDesign from './pages/GraphicDesign'
 import WhatIlike from './pages/WhatIlike'
@@ -18,9 +18,9 @@ export default function Root() {
       <Route path='/' element={<UI />}>
         <Route index element={<Home />} />
         <Route path='/work' element={<Work />} />
-        <Route path='/aboutme' element={<AboutMe />} />
-        <Route path='/work/webdevelopement' element={<Webdevelopement />} />
-        <Route path='/work/graphicdesign' element={<GraphicDesign />} />
+        <Route path='/aboutme' element={<Contacts />} />
+        <Route path='/work/webdev' element={<Webdevelopement />} />
+        <Route path='/work/design' element={<GraphicDesign />} />
         <Route path='/work/whatilike' element={<WhatIlike />} />
       </Route>
     </Routes>

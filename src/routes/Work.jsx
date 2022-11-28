@@ -60,10 +60,10 @@ export default function Work() {
   const { pathname } = useLocation()
   const [setNav] = useOutletContext()
 
-  const [hover, setHover] = useState('/webdevelopement')
+  const [hover, setHover] = useState('/webdev')
   const workButtons = [
-    {action: '/work/webdevelopement', name: '/webdevelopement', text: 'web_developement', icon: Cli},
-    {action: '/work/graphicdesign', name: '/graphicdesign', text: 'graphic_design', icon: Design},
+    {action: '/work/webdev', name: '/webdev', text: 'web_developement', icon: Cli},
+    {action: '/work/design', name: '/design', text: 'graphic_design', icon: Design},
     {action: '/work/whatilike', name: '/whatilike', text: 'what_I_like', icon: Heart},
   ]
   return (

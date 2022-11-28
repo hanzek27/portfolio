@@ -1,24 +1,20 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
 
 export default function LineNumbers() {
-  const [numberOfLines, setNumberOfLines] = useState(0)
-
-  useEffect(()=>{
-    const numbersContainer = document.getElementById('numbersContainer')
-    const parrentHeight = numbersContainer.offsetHeight
-    const numberOfLines = parrentHeight / 40
-    setNumberOfLines(Math.floor(numberOfLines))
-  },[])
-  
-  return (generateNumbers(numberOfLines))
+  const numbersString = createNumbers().toString().replaceAll(',', "\n")
+  return (
+    <div className='font-console text-center text-console leading-9 text-decor-light dark:text-decor-dark whitespace-pre-wrap'>
+      {numbersString}
+    </div>
+  )
 }
 
-function generateNumbers(lines) {
+function createNumbers() {
   let numbers = []
-  for (let i = 0; i < lines; i++ ) {
-    numbers.push(
-      <div key={i} className='w-full h-[40px] font-console text-console text-decor-light dark:text-decor-dark flex items-center justify-center'>{i}</div>
-    )
+  for (let i = 0; i < 23; i++) {
+    numbers.push(i)
   }
   return numbers
 }
+
+//tracking-widest

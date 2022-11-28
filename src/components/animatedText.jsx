@@ -32,7 +32,7 @@ const childrenanim = {
     opacity: 1,
   },
   out: {
-    x: -50,
+    x: 50,
     opacity: 0,
   }
 }
@@ -57,6 +57,16 @@ export function AnimatedSubhead({text}) {
   return (
     <motion.div variants={letterAnimation} initial='initial' animate='onScreen' exit='out' className='flex flex-wrap'>
       {Array.from(spacesIn).map((letter, index) => <motion.h2 key={index} variants={childrenanim} className='font-main text-medium text-dim-light dark:text-dim-dark mt-3'>{letter}</motion.h2>)}
+    </motion.div>
+  )
+}
+
+export function AnimatedText({text}) {
+  const space = '\xa0'
+  const spacesIn = text.replaceAll(' ', space)
+  return (
+    <motion.div variants={letterAnimation} initial='initial' animate='onScreen' exit='out' className='flex flex-wrap items-center'>
+      {Array.from(spacesIn).map((letter, index) => <motion.p key={index} variants={childrenanim} className='font-console text-console text-dim-light dark:text-dim-dark'>{letter}</motion.p>)}
     </motion.div>
   )
 }

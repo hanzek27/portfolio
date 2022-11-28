@@ -29,7 +29,7 @@ const navAnimation = {
 
 const itemsAnimation = {
   initial: (side)=> ({
-    x: side ? -50 : 50,
+    x: side ? -30 : 30,
     opacity: 0,
   }),
   open: {
@@ -47,6 +47,13 @@ export default function Nav({ changeMode, setNav }) {
     {action: changeMode, text: 'mode dark || light'},
   ]
 
+  const styles = {
+    size: 'w-navWidth md:w-[400px]',
+    design: 'py-lg flex flex-col items-center rounded-medium backdrop-blur-md ring-2 ring-inset z-[1]',
+    color: 'bg-nav-light dark:bg-nav-dark dark:ring-decor-dark ring-decor-light',
+    position: 'absolute top-[40px] right-[40px] ',
+  }
+
   return (
     <motion.nav
       onClick={()=> setNav(false)}
@@ -55,7 +62,7 @@ export default function Nav({ changeMode, setNav }) {
       initial='initial' 
       animate='open' 
       exit='initial'
-      className='rounded-medium py-lg px- flex flex-col items-center backdrop-blur-md absolute top-page-sm md:top-page-md lg:top-page-lg right-page-sm md:right-page-md lg:right-page-lg left-4 md:left-auto md:w-[400px] ring-2 ring-decor-light dark:ring-decor-dark ring-insetvbg-nav-light z-[1] dark:bg-nav-dark'
+      className={`${styles.design} ${styles.position} ${styles.color} ${styles.size}`}
     >
       <motion.ul className='flex flex-col gap-14 w-max'>
         {navButtons.map((button, index) => {
