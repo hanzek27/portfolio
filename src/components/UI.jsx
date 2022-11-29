@@ -24,7 +24,7 @@ export default function UI() {
   const [nav, setNav] = useState(false)
 
   return (
-    <main className="h-full relative grid grid-cols-layout grid-rows-layout bg-light dark:bg-dark overflow-hidden p-page-sm md:p-page-md lg:p-page-lg">
+    <main className="h-full grid grid-cols-layout grid-rows-layout bg-light dark:bg-dark overflow-hidden p-page-sm md:p-page-md lg:p-page-lg">
       <div className="flex items-center justify-center">
         <BackButton />
       </div>
@@ -41,7 +41,7 @@ export default function UI() {
       <div id='numbersContainer' className="overflow-hidden py-3">
         <LineNumbers/>
       </div>
-      <div className="w-full h-full">
+      <div className="w-full h-full scrollbar-thin scrollbar-track-[#09171D] scrollbar-thumb-accent-blue scrollbar-rounded ">
         <Outlet context={[setNav]} />
       </div>
       <div className="flex flex-col justify-start items-center py-sm">

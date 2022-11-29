@@ -48,6 +48,7 @@ module.exports = {
     },
     borderRadius: {
       'medium': '10px',
+      'full': '100%',
     },
     rotate: {
       'side': '-90deg',
@@ -88,6 +89,7 @@ module.exports = {
         'text-sm': '30px',
         'text-md': '70px',
         'text-lg': '120px',
+        'xs': '15px',
         'sm': '30px',
         'md': '60px',
         'lg': '100px',
@@ -102,5 +104,7 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar')({ nocompatible: true }),
+  ],
 }

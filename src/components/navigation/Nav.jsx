@@ -43,7 +43,7 @@ export default function Nav({ changeMode, setNav }) {
   const navButtons = [
     {action: '/', text: 'cd homepage'},
     {action: '/work', text: 'cd work'},
-    {action: '/aboutme', text: 'cd about_me'},
+    {action: '/contacts', text: 'cd contact_me'},
     {action: changeMode, text: 'mode dark || light'},
   ]
 

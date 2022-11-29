@@ -65,6 +65,7 @@ export default function Work() {
     {action: '/work/webdev', name: '/webdev', text: 'web_developement', icon: Cli},
     {action: '/work/design', name: '/design', text: 'graphic_design', icon: Design},
     {action: '/work/whatilike', name: '/whatilike', text: 'what_I_like', icon: Heart},
+    {action: '/work/cacora', name: '/cacora', text: 'cacora', icon: Heart},
   ]
   return (
     <motion.section className='h-full w-full grid grid-rows-4 grid-cols-2'>

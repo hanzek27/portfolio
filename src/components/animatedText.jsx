@@ -30,6 +30,11 @@ const childrenanim = {
   onScreen: {
     x: 0,
     opacity: 1,
+    transition: {
+      type: 'spring',
+      damping: 12,
+      stiffness: 100,
+    }
   },
   out: {
     x: 50,

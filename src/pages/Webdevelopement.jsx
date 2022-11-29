@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from "framer-motion"
-import Galery from '../components/Galery'
+import Galery from '../components/Preview'
 
 // const images = [
 //   {img: img1, id: 'image1'},

@@ -9,6 +9,7 @@ import Contacts from './routes/Contacts'
 import Webdevelopement from './pages/Webdevelopement'
 import GraphicDesign from './pages/GraphicDesign'
 import WhatIlike from './pages/WhatIlike'
+import Cacora from './pages/Cacora'
 
 export default function Root() {
   const location = useLocation()
@@ -18,10 +19,11 @@ export default function Root() {
       <Route path='/' element={<UI />}>
         <Route index element={<Home />} />
         <Route path='/work' element={<Work />} />
-        <Route path='/aboutme' element={<Contacts />} />
+        <Route path='/contacts' element={<Contacts />} />
         <Route path='/work/webdev' element={<Webdevelopement />} />
         <Route path='/work/design' element={<GraphicDesign />} />
         <Route path='/work/whatilike' element={<WhatIlike />} />
+        <Route path='/work/cacora' element={<Cacora />} />
       </Route>
     </Routes>
     </AnimatePresence>
