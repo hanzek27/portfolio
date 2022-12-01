@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { Outlet, useLocation, createBrowserRouter, RouterProvider, } from "react-router-dom";
 import { AnimatePresence } from "framer-motion"
-
+import { useMotionContext, useMotionUpdateContext } from '../hooks/useMotionContext'
+//components
 import LineNumbers from "./LineNumbers";
 import NavButton from "./buttons/NavButton";
 import Nav from "./navigation/Nav";
 import BackButton from "./buttons/BackButton";
 import {AnimatedText} from "./animatedText";
-import { Home, Cli, Dark } from "./Icons";
+import { Cli, Dark } from "./Icons";
 
 export default function UI() {
-
   const [mode, setMode] = useState(()=> !localStorage.mode ? 'dark' : JSON.parse(localStorage.getItem('mode')) )
   const changeMode = () => setMode(prev => prev === 'dark' ? 'light' : 'dark')
 
@@ -35,14 +35,14 @@ export default function UI() {
       <div className="flex items-center relative">
         <NavButton onClick={()=> setNav(prev => !prev)} nav={nav} />
         <AnimatePresence key='navigation'>
-          {nav && (<Nav changeMode={changeMode} setNav={setNav} />)}
+          {nav && (<Nav changeMode={changeMode} setNav={setNav} useMotionUpdateContext={useMotionUpdateContext} />)}
         </AnimatePresence>
       </div>
       <div id='numbersContainer' className="overflow-hidden py-3">
         <LineNumbers/>
       </div>
       <div className="w-full h-full">
-        <Outlet context={[setNav]} />
+        <Outlet context={[setNav, useMotionContext, useMotionUpdateContext ]} />
       </div>
       <div className="flex flex-col justify-start items-center py-sm">
         <span className="relative top-[20px] w-max font-console text-console text-decor-light dark:text-decor-dark rotate-side origin-top-center">--open</span>

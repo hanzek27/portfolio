@@ -1,44 +1,15 @@
 import React from 'react'
 import ConsoleButton from '../buttons/ConsoleButton'
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
+import { navAnimation, navButtonsAnimation } from '../animations/textAnimation'
+import { useMotionContext } from '../../hooks/useMotionContext'
 
-const navAnimation = {
-  initial: {
-    scale: 0, 
-    originY: 0,  
-    originX: 1,
-    transition: {
-      when: "afterChildren",
-      staggerChildren: 0.1,
-      ease: [0.6, 0.01, -0.05, 0.95],
-      duration: 0.5,
-    },
-  },
-  open: {
-    scale: 1, 
-    originY: 0,  
-    originX: 1,
-    transition: {
-      when: 'beforeChildren',
-      staggerChildren: 0.1,
-      ease: [0.6, 0.01, -0.05, 0.95],
-      duration: 0.5,
-    },
-  }
-}
+export default function Nav({ changeMode, setNav, useMotionUpdateContext }) {
 
-const itemsAnimation = {
-  initial: (side)=> ({
-    x: side ? -30 : 30,
-    opacity: 0,
-  }),
-  open: {
-    x: 0,
-    opacity: 1,
-  },
-}
-
-export default function Nav({ changeMode, setNav }) {
+  const setMotionContext = useMotionUpdateContext()
+  const reduceMotion = useMotionContext()
+  const navBoxAnimation = navAnimation(reduceMotion)
+  const navItems = navButtonsAnimation(reduceMotion)
 
   const navButtons = [
     {action: '/', text: 'cd homepage'},
@@ -59,16 +30,17 @@ export default function Nav({ changeMode, setNav }) {
       <motion.nav
         onClick={()=> setNav(false)}
         key='navigation'
-        variants={navAnimation} 
+        variants={navBoxAnimation} 
         initial='initial' 
         animate='open' 
         exit='initial'
         className={`${styles.design} ${styles.position} ${styles.color} ${styles.size}`}
       >
+        <button onClick={setMotionContext} className='text-button text-main-light dark:text-main-dark absolute top-3 left-3'>turn off animations</button>
         <motion.ul className='flex flex-col gap-14 w-max'>
           {navButtons.map((button, index) => {
             const side = index % 2==0 // returns true or false
-            return <ConsoleButton key={button.text} itemsAnimation={itemsAnimation} side={side} action={button.action} text={button.text} />
+            return <ConsoleButton key={button.text} itemsAnimation={navItems} side={side} action={button.action} text={button.text} />
           })}
         </motion.ul>
       </motion.nav>

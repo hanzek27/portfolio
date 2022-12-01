@@ -11,21 +11,25 @@ import GraphicDesign from './pages/GraphicDesign'
 import WhatIlike from './pages/WhatIlike'
 import Cacora from './pages/Cacora'
 
+import CreateMotionContext from './hooks/useMotionContext'
+
 export default function Root() {
   const location = useLocation()
   return (
-    <AnimatePresence mode='wait' key='pages'>
-    <Routes location={location} key={location.pathname}>
-      <Route path='/' element={<UI />}>
-        <Route index element={<Home />} />
-        <Route path='/work' element={<Work />} />
-        <Route path='/contacts' element={<Contacts />} />
-        <Route path='/work/webdev' element={<Webdevelopement />} />
-        <Route path='/work/design' element={<GraphicDesign />} />
-        <Route path='/work/whatilike' element={<WhatIlike />} />
-      </Route>
-    </Routes>
-    </AnimatePresence>
+    <CreateMotionContext>
+      <AnimatePresence mode='wait' key='pages'>
+        <Routes location={location} key={location.pathname}>
+          <Route path='/' element={<UI />}>
+            <Route index element={<Home />} />
+            <Route path='/work' element={<Work />} />
+            <Route path='/contacts' element={<Contacts />} />
+            <Route path='/work/webdev' element={<Webdevelopement />} />
+            <Route path='/work/design' element={<GraphicDesign />} />
+            <Route path='/work/whatilike' element={<WhatIlike />} />
+          </Route>
+        </Routes>
+      </AnimatePresence>
+    </CreateMotionContext>
   );
 }
 
