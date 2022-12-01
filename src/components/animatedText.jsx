@@ -43,13 +43,17 @@ const childrenanim = {
 }
 
 export default function AnimatedHeadline({text}) {
-  const space = '\xa0'
-  const spacesIn = text.replaceAll(' ', space)
+  const words = text.split(' ')
+  const arrayOfWords = words.map(word => [...word])
   return (
-    <motion.div variants={letterAnimation} initial='initial' animate='onScreen' exit='out' className='flex flex-wrap'>
-      {Array.from(spacesIn).map((letter, index) => {
+    <motion.div variants={letterAnimation} initial='initial' animate='onScreen' exit='out' className='flex flex-wrap gap-2.5'>
+      {arrayOfWords.map((word, index) => {
         return (
-      <motion.h1 whileHover={{scale: 1.6}} key={letter + index} variants={childrenanim} className='font-main text-large text-main-light dark:text-main-dark'>{letter}</motion.h1>
+          <motion.span key={index} className="flex">
+            {word.map((letter, index) => (
+              <motion.h1 whileHover={{scale: 1.6}} key={letter + index} variants={childrenanim} className='font-main text-large text-main-light dark:text-main-dark'>{letter}</motion.h1>
+            ))}
+          </motion.span>
         )
       })}
     </motion.div>
@@ -57,11 +61,19 @@ export default function AnimatedHeadline({text}) {
 }
 
 export function AnimatedSubhead({text}) {
-  const space = '\xa0'
-  const spacesIn = text.replaceAll(' ', space)
+  const words = text.split(' ')
+  const arrayOfWords = words.map(word => [...word])
   return (
-    <motion.div variants={letterAnimation} initial='initial' animate='onScreen' exit='out' className='flex flex-wrap'>
-      {Array.from(spacesIn).map((letter, index) => <motion.h2 key={index} variants={childrenanim} className='font-main text-medium text-dim-light dark:text-dim-dark mt-3'>{letter}</motion.h2>)}
+    <motion.div variants={letterAnimation} initial='initial' animate='onScreen' exit='out' className='flex flex-wrap gap-1.5 mt-7'>
+      {arrayOfWords.map((word, index) => {
+        return (
+          <motion.span key={index} className="flex">
+            {word.map((letter, index) => (
+              <motion.h2 key={index} variants={childrenanim} className='font-main text-medium text-dim-light dark:text-dim-dark'>{letter}</motion.h2>
+            ))}
+          </motion.span>
+        )
+      })}
     </motion.div>
   )
 }

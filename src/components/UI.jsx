@@ -41,7 +41,7 @@ export default function UI() {
       <div id='numbersContainer' className="overflow-hidden py-3">
         <LineNumbers/>
       </div>
-      <div className="w-full h-full scrollbar-thin scrollbar-track-[#09171D] scrollbar-thumb-accent-blue scrollbar-rounded ">
+      <div className="w-full h-full">
         <Outlet context={[setNav]} />
       </div>
       <div className="flex flex-col justify-start items-center py-sm">

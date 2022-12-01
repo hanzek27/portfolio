@@ -1,5 +1,5 @@
 import React from 'react'
-import Preview from '../components/Preview'
+import Expandible from '../components/Expandible'
 
 import img1 from '../assets/images/cacora/img1.jpg'
 import img2 from '../assets/images/cacora/img2.jpg'
@@ -12,13 +12,10 @@ export default function Cacora() {
     {img: img1, id: 'img1'},
     {img: img2, id: 'img2'},
     {img: img3, id: 'img3'},
-    {img: img4, id: 'img4'},
-    {img: img4, id: 'img5'},
-    {img: img4, id: 'img6'},
   ]
   return (
     <div className='h-full w-full'>
-      <Preview images={images} />
+      <Expandible images={images} />
     </div>
   )
 }

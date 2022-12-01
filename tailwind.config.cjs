@@ -16,7 +16,7 @@ module.exports = {
     },
     fontSize: {
       'large': ['2.5rem', {
-        lineHeight: '3rem',
+        lineHeight: '2.5rem',
         letterSpacing: '0',
         fontWeight: '600',
       }],
@@ -101,6 +101,7 @@ module.exports = {
       },
       gridTemplateRows: {
         'layout': '30px minmax(0, 1fr) 30px',
+        'stack': 'repeat(4, 1fr)'
       }
     },
   },

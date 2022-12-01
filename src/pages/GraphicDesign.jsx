@@ -1,5 +1,5 @@
 import React from 'react'
-import Galery from '../components/Preview'
+import Presentation from '../components/Presentation'
 //images
 import atlas from '../assets/images/graphic_design/atlas2.jpg'
 import pucalka from '../assets/images/graphic_design/logoPucalka1.jpg'
@@ -11,15 +11,15 @@ import plesinger1 from '../assets/images/graphic_design/plesinger1.png'
 export default function GraphicDesign() {
 
   const images = [
-    {img: plesinger1, id: 'plesinger1'},
-    {img: pucalka, id: 'pucalka'},
-    {img: pucalka3, id: 'pucalka3'},
-    {img: vznikLogaPucalka, id: 'vznikLogaPucalka'},
+    {img: plesinger1, id: 'plesinger1', name: 'project: Plesinger'},
+    {img: pucalka, id: 'pucalka', name: 'redesign: Logo Pučálka'},
+    {img: pucalka3, id: 'pucalka3', name: 'dalsi pucalka'},
+    {img: vznikLogaPucalka, id: 'vznikLogaPucalka', name: 'vznik pucalka'},
   ]
 
   return (
     <section className='h-full w-full overflow-hidden'>
-      <Galery scroll={true} images={images} />
+      <Presentation images={images} />
     </section>
   )
 }

@@ -23,7 +23,6 @@ export default function Root() {
         <Route path='/work/webdev' element={<Webdevelopement />} />
         <Route path='/work/design' element={<GraphicDesign />} />
         <Route path='/work/whatilike' element={<WhatIlike />} />
-        <Route path='/work/cacora' element={<Cacora />} />
       </Route>
     </Routes>
     </AnimatePresence>

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { NavLink, useOutletContext, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { Arrow, Cli, Heart, Design } from '../components/Icons';
 import ConsoleGraphics from '../components/ConsoleGraphics';
 const MotionNavLink = motion(NavLink)
@@ -65,7 +65,6 @@ export default function Work() {
     {action: '/work/webdev', name: '/webdev', text: 'web_developement', icon: Cli},
     {action: '/work/design', name: '/design', text: 'graphic_design', icon: Design},
     {action: '/work/whatilike', name: '/whatilike', text: 'what_I_like', icon: Heart},
-    {action: '/work/cacora', name: '/cacora', text: 'cacora', icon: Heart},
   ]
   return (
     <motion.section className='h-full w-full grid grid-rows-4 grid-cols-2'>
