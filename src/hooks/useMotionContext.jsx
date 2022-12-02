@@ -1,4 +1,5 @@
 import { useState, createContext, useContext } from "react";
+import useLocalStorage from "./useLocalStorage";
 
 const MotionContext = createContext()
 const MotionUpdateContext = createContext()
@@ -13,7 +14,7 @@ export function useMotionUpdateContext() {
 
 
 export default function CreateMotionContext({ children }) {
-  const [reduceMotion, setReduceMotion] = useState(false)
+  const [reduceMotion, setReduceMotion] = useLocalStorage('reduceMotion', false)
 
   function useUpdateMotionContext() {
     setReduceMotion(prev => !prev)

@@ -9,6 +9,7 @@ import Nav from "./navigation/Nav";
 import BackButton from "./buttons/BackButton";
 import {AnimatedText} from "./animatedText";
 import { Cli, Dark } from "./Icons";
+import MotionToggle from "./buttons/MotionToggle";
 
 export default function UI() {
   const [mode, setMode] = useState(()=> !localStorage.mode ? 'dark' : JSON.parse(localStorage.getItem('mode')) )
@@ -23,14 +24,16 @@ export default function UI() {
   const { pathname } = useLocation()
   const [nav, setNav] = useState(false)
 
+  const text = '<nav />'
+
   return (
-    <main className="h-full grid grid-cols-layout grid-rows-layout bg-light dark:bg-accent-blue overflow-hidden p-page-sm md:p-page-md lg:p-page-lg">
+    <main className="h-full grid grid-cols-layout grid-rows-layout bg-light dark:bg-dark overflow-hidden p-page-sm md:p-page-md lg:p-page-lg">
       <div className="flex items-center justify-center">
         <BackButton />
       </div>
       <div className="flex justify-between px-sm items-center">
         <AnimatedText text={`home${ pathname }`} />
-        <span className="font-console text-console text-decor-light dark:text-decor-dark">--nav</span>
+        <span className="font-console text-console text-decor-light dark:text-decor-dark">{text}</span>
       </div>
       <div className="flex items-center relative">
         <NavButton onClick={()=> setNav(prev => !prev)} nav={nav} />
@@ -51,8 +54,9 @@ export default function UI() {
       <div className="flex items-center justify-center">
         <Cli width='30px' />
       </div>
-      <div className="flex items-center">
-        <h3 className="font-console text-console text-main-light dark:text-main-dark mr-auto pl-text-sm">my\portfolio</h3>
+      <div className="flex items-center justify-center">
+        <h3 className="font-console text-console text-main-light dark:text-main-dark mr-4 pl-text-sm">reduce motion</h3>
+        <MotionToggle />
       </div>
       <div>
         <Dark width='25px' mode={mode} onClick={changeMode} />

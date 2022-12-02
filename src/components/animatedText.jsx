@@ -12,10 +12,11 @@ export default function AnimatedHeadline({text}) {
   return (
     <motion.div variants={orchestration} initial='initiate' animate='onScreen' exit='out' className='flex flex-wrap gap-2.5'>
       {arrayOfWords.map((word, index) => {
+        const honza = word[0] === 'H' && word[1] === 'o'
         return (
-          <motion.span key={index} className="flex">
+          <motion.span key={index} className={`flex`}>
             {word.map((letter, index) => (
-              <motion.h1 whileHover={{scale: 1.6}} key={letter + index} variants={letterAnimationObject} className='font-main text-large text-main-light dark:text-main-dark'>{letter}</motion.h1>
+              <motion.h1 whileHover={{scale: 1.6}} key={letter + index} variants={letterAnimationObject} className={`font-main text-large ${ honza ? 'text-accent-blue' : 'text-main-light dark:text-main-dark' }`}>{letter}</motion.h1>
             ))}
           </motion.span>
         )

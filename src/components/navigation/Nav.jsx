@@ -36,7 +36,6 @@ export default function Nav({ changeMode, setNav, useMotionUpdateContext }) {
         exit='initial'
         className={`${styles.design} ${styles.position} ${styles.color} ${styles.size}`}
       >
-        <button onClick={setMotionContext} className='text-button text-main-light dark:text-main-dark absolute top-3 left-3'>turn off animations</button>
         <motion.ul className='flex flex-col gap-14 w-max'>
           {navButtons.map((button, index) => {
             const side = index % 2==0 // returns true or false

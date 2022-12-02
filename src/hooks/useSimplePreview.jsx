@@ -35,7 +35,7 @@ function calculatePosition(image) {
   const selectedItem = document.getElementById(image.id)
 
   //expanded sizes
-  const itemHeight = window.innerWidth > 800 ? 700 : 700
+  const itemHeight = window.innerWidth > 800 ? 700 : window.innerHeight - 100
   const itemWidth = window.innerWidth > 800 ? (
     image.width ? image.width : 400 
   ) : (window.innerWidth - 30)

@@ -48,6 +48,7 @@ module.exports = {
     },
     borderRadius: {
       'medium': '10px',
+      'lg': '50px',
       'full': '100%',
     },
     rotate: {
@@ -69,7 +70,7 @@ module.exports = {
         },
         //text
         'main': {
-          'light': '#577D80',
+          'light': '#3B5456', //#577D80
           'dark': '#D9D9D9',
         },
         'dim': {
@@ -95,6 +96,7 @@ module.exports = {
         'lg': '100px',
         'xl': '150px',
         'navWidth': 'calc(100vw - 110px)',
+        'toggleThumb': '20px',
       },
       gridTemplateColumns: {
         'layout': '30px minmax(50px, 1fr) 30px',
