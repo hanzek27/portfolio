@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 //components
@@ -9,7 +8,6 @@ import Contacts from './routes/Contacts'
 import Webdevelopement from './pages/Webdevelopement'
 import GraphicDesign from './pages/GraphicDesign'
 import WhatIlike from './pages/WhatIlike'
-import Cacora from './pages/Cacora'
 
 import CreateMotionContext from './hooks/useMotionContext'
 
