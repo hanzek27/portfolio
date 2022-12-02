@@ -1,15 +1,12 @@
 import React from 'react'
 import ConsoleButton from '../buttons/ConsoleButton'
 import { motion } from "framer-motion"
-import { navAnimation, navButtonsAnimation } from '../animations/textAnimation'
+import { navAnimation, navButtonsAnimation, reducedMotionObject } from '../animations/textAnimation'
 import { useMotionContext } from '../../hooks/useMotionContext'
 
 export default function Nav({ changeMode, setNav, useMotionUpdateContext }) {
 
-  const setMotionContext = useMotionUpdateContext()
   const reduceMotion = useMotionContext()
-  const navBoxAnimation = navAnimation(reduceMotion)
-  const navItems = navButtonsAnimation(reduceMotion)
 
   const navButtons = [
     {action: '/', text: 'cd homepage'},
@@ -30,7 +27,7 @@ export default function Nav({ changeMode, setNav, useMotionUpdateContext }) {
       <motion.nav
         onClick={()=> setNav(false)}
         key='navigation'
-        variants={navBoxAnimation} 
+        variants={reduceMotion ? reducedMotionObject : navAnimation} 
         initial='initial' 
         animate='open' 
         exit='initial'
@@ -39,7 +36,7 @@ export default function Nav({ changeMode, setNav, useMotionUpdateContext }) {
         <motion.ul className='flex flex-col gap-14 w-max'>
           {navButtons.map((button, index) => {
             const side = index % 2==0 // returns true or false
-            return <ConsoleButton key={button.text} itemsAnimation={navItems} side={side} action={button.action} text={button.text} />
+            return <ConsoleButton key={button.text} itemsAnimation={reduceMotion ? reducedMotionObject : navButtonsAnimation} side={side} action={button.action} text={button.text} />
           })}
         </motion.ul>
       </motion.nav>

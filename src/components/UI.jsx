@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react";
 import { Outlet, useLocation, createBrowserRouter, RouterProvider, } from "react-router-dom";
-import { AnimatePresence } from "framer-motion"
+import { AnimatePresence, MotionConfig } from "framer-motion"
 import { useMotionContext, useMotionUpdateContext } from '../hooks/useMotionContext'
 //components
 import LineNumbers from "./LineNumbers";
 import NavButton from "./buttons/NavButton";
 import Nav from "./navigation/Nav";
 import BackButton from "./buttons/BackButton";
-import {AnimatedText} from "./animatedText";
+import { AnimatedText } from "./animatedText";
 import { Cli, Dark } from "./Icons";
 import MotionToggle from "./buttons/MotionToggle";
 
 export default function UI() {
+  const reducedMotion = useMotionContext()
   const [mode, setMode] = useState(()=> !localStorage.mode ? 'dark' : JSON.parse(localStorage.getItem('mode')) )
   const changeMode = () => setMode(prev => prev === 'dark' ? 'light' : 'dark')
 
@@ -24,8 +25,6 @@ export default function UI() {
   const { pathname } = useLocation()
   const [nav, setNav] = useState(false)
 
-  const text = '<nav />'
-
   return (
     <main className="h-full grid grid-cols-layout grid-rows-layout bg-light dark:bg-dark overflow-hidden p-page-sm md:p-page-md lg:p-page-lg">
       <div className="flex items-center justify-center">
@@ -33,7 +32,7 @@ export default function UI() {
       </div>
       <div className="flex justify-between px-sm items-center">
         <AnimatedText text={`home${ pathname }`} />
-        <span className="font-console text-console text-decor-light dark:text-decor-dark">{text}</span>
+        <span className="font-console text-console text-decor-light dark:text-decor-dark">{'<nav />'}</span>
       </div>
       <div className="flex items-center relative">
         <NavButton onClick={()=> setNav(prev => !prev)} nav={nav} />

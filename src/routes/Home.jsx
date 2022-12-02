@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react'
 import { useOutletContext, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { reducedMotionObject, textAnimation } from '../components/animations/textAnimation';
 //components
 import AnimatedHeadline, { AnimatedSubhead } from '../components/animatedText';
 import ConsoleGraphics from '../components/ConsoleGraphics';
@@ -16,7 +17,7 @@ export default function Home() {
       <motion.article className='max-w-[450px] flex flex-col justify-center pl-text-sm md:pl-text-md lg:pl-text-lg'>
         <AnimatedHeadline text='Hey nice to meet you I am Honza...' />
         <AnimatedSubhead text='graphic designer and web developer asi, co ja kurva vim' />
-        <motion.button initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0, transition: {ease: 'easeInOut', duration: 0.3}}} onClick={()=> navigate('/contacts')} className={`${ !reduceMotion && 'animate-bounce' } font-console text-button text-main-light dark:text-main-dark border py-4 px-7 w-max rounded-medium mt-md`}>
+        <motion.button variants={reduceMotion ? reducedMotionObject : textAnimation} initial='initiate' animate='onScreen' exit='out' onClick={()=> navigate('/contacts')} className={`${ !reduceMotion && 'animate-bounce' } font-console text-button text-main-light dark:text-main-dark border py-4 px-7 w-max rounded-medium mt-md`}>
           contact me
         </motion.button>
       </motion.article>
