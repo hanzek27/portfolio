@@ -1,6 +1,6 @@
-import React from 'react'
-import { motion } from "framer-motion"
-import Preview from '../components/Preview'
+import React, { useState } from 'react'
+import { AnimatePresence } from "framer-motion";
+import PreviewScreen from '../components/preview/PreviewScreen'
 
 //images
 import img1 from '../assets/images/what_I_like/obr1.jpg'
@@ -15,10 +15,38 @@ const images = [
   {img: img5, id: 'image4', width: 400},
 ]
 
-export default function WebDev() {
+export default function WhatILike() {
+  const [hideThumbnail, setHideThumbnail] = useState(null);
+  const [selectedImg, setselectedImg] = useState(null);
   return (
-    <motion.section className='h-full w-full overflow-visible'>
-      <Preview images={images} />
-    </motion.section>
+    <section className="h-full w-full overflow-visible grid grid-cols-2 grid-rows-2 gap-4 p-sm md:p-md">
+      {images.map((image, index) => (
+        <div
+          className="rounded-medium overflow-hidden"
+          key={image.id}
+          onClick={(e) => {
+            setselectedImg({ index: index + 1, item: e.target, id: image.id });
+            setHideThumbnail(image.id);
+          }}
+        >
+          <img
+            src={image.img}
+            className={`w-full h-full object-cover ${
+              hideThumbnail === image.id && "hidden"
+            }`}
+          />
+        </div>
+      ))}
+      <AnimatePresence>
+        {selectedImg && (
+          <PreviewScreen
+            images={images}
+            selectedImg={selectedImg}
+            setselectedImg={setselectedImg}
+            setHideThumbnail={setHideThumbnail}
+          />
+        )}
+      </AnimatePresence>
+    </section>
   )
 }

@@ -13,7 +13,6 @@ export default function Nav({ changeMode, setNav, useMotionUpdateContext }) {
     {action: '/', text: 'cd homepage'},
     {action: '/work', text: 'cd work'},
     {action: '/contacts', text: 'cd contact_me'},
-    {action: '/work/carousel', text: 'carousel'},
     {action: changeMode, text: 'mode dark || light'},
   ]
 
