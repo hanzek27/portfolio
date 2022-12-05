@@ -7,30 +7,34 @@ export const previewAnimation = ({top, left, width, height}) => {
   const topShift = top - previewTop
   return {
     initial: {
-      top: topShift,
-      left: leftShift,
+      y: topShift,
+      x: leftShift,
       width: width,
       height: height,
     },
     fullScreen: {
-      top: 0,
-      left: 0,
+      y: 0,
+      x: 0,
       width: previewWidth,
       height: previewHeight,
-      transition: {
-        duration: 1
-      }
     },
   }
 }
 
-export const orchestrateObject = {
+export const backdropAnimation = {
   initial: {
-    opacity: 1,
-    transition: { when: "afterChildren" }
+    opacity: 0,
   },
   fullScreen: {
     opacity: 1,
+  },
+}
+
+export const orchestrateObject = {
+  initial: {
+    transition: { when: "afterChildren" }
+  },
+  fullScreen: {
     transition: { when: "afterChildren" }
   },
 };

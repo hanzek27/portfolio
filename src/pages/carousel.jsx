@@ -18,6 +18,7 @@ const images = [
 ];
 
 export default function CarouselPage() {
+  const [hideThumbnail, setHideThumbnail] = useState(null)
   const [selectedImg, setselectedImg] = useState(null);
   return (
     <motion.section className="h-full w-full overflow-visible grid grid-cols-2 grid-rows-2 gap-4 p-sm md:p-md">
@@ -25,12 +26,15 @@ export default function CarouselPage() {
         <div
           className="rounded-medium overflow-hidden"
           key={image.id}
-          onClick={(e) => setselectedImg({ index: index + 1, item: e.target})}
+          onClick={(e) => {
+            setselectedImg({ index: index + 1, item: e.target, id: image.id})
+            setHideThumbnail(image.id)
+          }}
         >
           <img
             src={image.img}
             className={`w-full h-full object-cover ${
-              selectedImg?.index === index + 1 && "hidden"
+              hideThumbnail === image.id && "hidden"
             }`}
           />
         </div>
@@ -41,6 +45,7 @@ export default function CarouselPage() {
             images={images}
             selectedImg={selectedImg}
             setselectedImg={setselectedImg}
+            setHideThumbnail={setHideThumbnail}
           />
         )}
       </AnimatePresence>

@@ -1,27 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { orchestrateObject } from "../animations/previewAnimation";
-import {
-  motion,
-  AnimatePresence,
-  useAnimationControls,
-  useTransform,
-  useMotionValue,
-  useMotionTemplate,
-} from "framer-motion";
+import React from 'react'
+import { motion, useAnimationControls } from "framer-motion";
+import { backdropAnimation } from '../animations/previewAnimation';
+import useImagePosition from '../../hooks/useImagePosition'
 
-
-export default function PreviewBackdrop({ children }) {
-  return ReactDOM.createPortal(
-    <motion.div
-      variants={orchestrateObject}
-      initial="initial"
-      animate="fullScreen"
-      exit="initial"
-      className="fixed w-full h-full z-10 flex justify-center items-center bg-nav-dark"
-    >
-      {children}
-    </motion.div>,
-    document.getElementById("modals")
-  );
+export default function PreviewBackdrop({setselectedImg}) {
+  return (
+    <motion.div onClick={() => setselectedImg(null)} variants={backdropAnimation} className='absolute w-full h-full bg-nav-dark z-[-1]' />
+  )
 }
