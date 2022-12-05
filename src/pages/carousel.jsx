@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import Preview from "../components/preview/Preview";
+import React, { useState } from "react";
+import PreviewScreen from '../components/preview/PreviewScreen' 
 import { motion, AnimatePresence } from "framer-motion";
 //images
 import img1 from "../assets/images/what_I_like/obr1.jpg";
@@ -38,7 +38,7 @@ export default function CarouselPage() {
       ))}
       <AnimatePresence>
         {selectedImg && (
-          <Preview
+          <PreviewScreen
             images={images}
             selectedImg={selectedImg}
             setselectedImg={setselectedImg}

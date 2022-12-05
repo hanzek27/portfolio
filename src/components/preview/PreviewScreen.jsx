@@ -6,7 +6,7 @@ import { orchestrateObject } from "../animations/previewAnimation";
 import PreviewImage from "./PreviewImage";
 import PreviewBackdrop from "./previewBackdrop";
 
-export default function Preview({
+export default function PreviewScreen({
   images,
   selectedImg,
   setselectedImg,
