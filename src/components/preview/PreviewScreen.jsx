@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 //components
 import { orchestrateObject } from "../animations/previewAnimation";
 import PreviewImage from "./PreviewImage";
-import PreviewBackdrop from "./previewBackdrop";
+import PreviewBackdrop from "./PreviewBackdrop";
 
 export default function PreviewScreen({
   images,

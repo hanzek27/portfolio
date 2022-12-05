@@ -1,7 +1,6 @@
 import React from 'react'
-import { motion, useAnimationControls } from "framer-motion";
+import { motion } from "framer-motion";
 import { backdropAnimation } from '../animations/previewAnimation';
-import useImagePosition from '../../hooks/useImagePosition'
 
 export default function PreviewBackdrop({setselectedImg}) {
   return (
