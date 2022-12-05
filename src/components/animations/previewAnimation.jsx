@@ -11,15 +11,26 @@ export const previewAnimation = ({top, left, width, height}) => {
       left: leftShift,
       width: width,
       height: height,
-      transition: {
-        duration: 0.4
-      }
     },
     fullScreen: {
       top: 0,
       left: 0,
       width: previewWidth,
       height: previewHeight,
+      transition: {
+        duration: 1
+      }
     },
   }
 }
+
+export const orchestrateObject = {
+  initial: {
+    opacity: 1,
+    transition: { when: "afterChildren" }
+  },
+  fullScreen: {
+    opacity: 1,
+    transition: { when: "afterChildren" }
+  },
+};
