@@ -11,6 +11,9 @@ export const previewAnimation = ({top, left, width, height}) => {
       left: leftShift,
       width: width,
       height: height,
+      transition: {
+        duration: 0.4
+      }
     },
     fullScreen: {
       top: 0,
