@@ -1,12 +1,9 @@
 import React from "react";
-import {
-  motion,
-  useAnimationControls,
-} from "framer-motion";
+import { motion } from "framer-motion";
 
 //components
 import { previewAnimation } from "../animations/previewAnimation";
-import SwitchImageButtons from "../buttons/SwitchImageButtons";
+//import SwitchImageButtons from "../buttons/SwitchImageButtons";
 
 export default function PreviewImage({ images, selectedImg, setselectedImg }) {
   const animationObject = previewAnimation(imagePosition(selectedImg.item));
@@ -40,12 +37,12 @@ function imagePosition(item) {
   };
 }
 
-function shiftIndex(setCurrentIndex, maxIndex, direction) {
-  setCurrentIndex((prev) => {
-    if (direction === "down") {
-      return prev === 1 ? maxIndex : prev - 1;
-    } else {
-      return prev === maxIndex ? 1 : prev + 1;
-    }
-  });
-}
+// function shiftIndex(setCurrentIndex, maxIndex, direction) {
+//   setCurrentIndex((prev) => {
+//     if (direction === "down") {
+//       return prev === 1 ? maxIndex : prev - 1;
+//     } else {
+//       return prev === maxIndex ? 1 : prev + 1;
+//     }
+//   });
+// }

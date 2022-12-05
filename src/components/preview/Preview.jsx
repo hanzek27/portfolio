@@ -1,14 +1,7 @@
 import React from 'react'
 import ReactDOM from "react-dom";
 
-import {
-  motion,
-  AnimatePresence,
-  useAnimationControls,
-  useTransform,
-  useMotionValue,
-  useMotionTemplate,
-} from "framer-motion";
+import { motion } from "framer-motion";
 
 //components
 import { orchestrateObject } from '../animations/previewAnimation';
