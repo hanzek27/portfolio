@@ -1,10 +1,10 @@
-export const previewAnimation = ({top, left, width, height}) => {
+export const previewAnimation = ({y, x, width, height}) => {
   const previewWidth = window.innerWidth > 800 ? 500 : window.innerWidth - 20
   const previewHeight = 800
   const previewLeft = (window.innerWidth - width) / 2
   const previewTop = (window.innerHeight - height) / 2
-  const leftShift = left - previewLeft
-  const topShift = top - previewTop
+  const leftShift = x - previewLeft
+  const topShift = y - previewTop
   return {
     initial: {
       y: topShift,

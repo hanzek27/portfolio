@@ -8,7 +8,7 @@ import Contacts from './routes/Contacts'
 import Webdevelopement from './pages/Webdevelopement'
 import GraphicDesign from './pages/GraphicDesign'
 import WhatIlike from './pages/WhatIlike'
-import CarouselPage from './pages/carousel'
+import CarouselPage from './pages/Carousel'
 
 import CreateMotionContext from './hooks/useMotionContext'
 

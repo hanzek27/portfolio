@@ -1,14 +1,9 @@
-
 export default function useImagePosition(img) {
-  return getImagePosition(img)
-}
-
-function getImagePosition(item) {
-  const imgPosition = item.getBoundingClientRect();
+  const imgPosition = img.getBoundingClientRect();
   return {
     y: imgPosition.top,
     x: imgPosition.left,
-    width: item.offsetWidth,
-    height: item.offsetHeight,
-  }
+    width: img.offsetWidth,
+    height: img.offsetHeight,
+  };
 }

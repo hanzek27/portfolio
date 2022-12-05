@@ -1,12 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
+import useImagePosition from "../../hooks/useImagePosition";
 
 //components
 import { previewAnimation } from "../animations/previewAnimation";
 //import SwitchImageButtons from "../buttons/SwitchImageButtons";
 
 export default function PreviewImage({ images, selectedImg, setselectedImg }) {
-  const animationObject = previewAnimation(imagePosition(selectedImg.item));
+  const imagePosition = useImagePosition(selectedImg.item)
+  const animationObject = previewAnimation(imagePosition);
   return (
     <motion.div
       className="rounded-medium overflow-hidden"
@@ -16,25 +18,12 @@ export default function PreviewImage({ images, selectedImg, setselectedImg }) {
       onDragEnd={() => setselectedImg(null)}
     >
       <img
+        className="w-full h-full object-cover"
         onClick={(e) => e.stopPropagation()}
         src={images[selectedImg.index - 1].img}
-        className="w-full h-full object-cover"
       />
     </motion.div>
   );
-}
-
-
-
-
-function imagePosition(item) {
-  const imgPosition = item.getBoundingClientRect();
-  return {
-    top: imgPosition.top,
-    left: imgPosition.left,
-    width: item.offsetWidth,
-    height: item.offsetHeight,
-  };
 }
 
 // function shiftIndex(setCurrentIndex, maxIndex, direction) {

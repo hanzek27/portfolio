@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Preview from "../components/preview/Preview";
-import {
-  motion,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 //images
 import img1 from "../assets/images/what_I_like/obr1.jpg";
 import img2 from "../assets/images/what_I_like/obr2.jpg";
@@ -18,7 +15,7 @@ const images = [
 ];
 
 export default function CarouselPage() {
-  const [hideThumbnail, setHideThumbnail] = useState(null)
+  const [hideThumbnail, setHideThumbnail] = useState(null);
   const [selectedImg, setselectedImg] = useState(null);
   return (
     <motion.section className="h-full w-full overflow-visible grid grid-cols-2 grid-rows-2 gap-4 p-sm md:p-md">
@@ -27,8 +24,8 @@ export default function CarouselPage() {
           className="rounded-medium overflow-hidden"
           key={image.id}
           onClick={(e) => {
-            setselectedImg({ index: index + 1, item: e.target, id: image.id})
-            setHideThumbnail(image.id)
+            setselectedImg({ index: index + 1, item: e.target, id: image.id });
+            setHideThumbnail(image.id);
           }}
         >
           <img
@@ -52,6 +49,3 @@ export default function CarouselPage() {
     </motion.section>
   );
 }
-
-
-
