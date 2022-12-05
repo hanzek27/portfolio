@@ -8,7 +8,7 @@ import Contacts from './routes/Contacts'
 import Webdevelopement from './pages/Webdevelopement'
 import GraphicDesign from './pages/GraphicDesign'
 import WhatIlike from './pages/WhatIlike'
-import CarouselPage from './pages/Carousel'
+//import CarouselPage from './pages/Carousel'
 
 import CreateMotionContext from './hooks/useMotionContext'
 
@@ -25,7 +25,6 @@ export default function Root() {
             <Route path='/work/webdev' element={<Webdevelopement />} />
             <Route path='/work/design' element={<GraphicDesign />} />
             <Route path='/work/whatilike' element={<WhatIlike />} />
-            <Route path='/work/carousel' element={<CarouselPage />} />
           </Route>
         </Routes>
       </AnimatePresence>
