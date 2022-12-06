@@ -3,15 +3,10 @@ import ReactDOM from "react-dom";
 import { motion } from "framer-motion";
 //components
 import { orchestrateObject } from "../animations/previewAnimation";
-import PreviewImage from "./previewImage";
 import PreviewBackdrop from "./PreviewBackdrop";
+import FullscreenImage from "./FullScreenImage";
 
-export default function PreviewScreen({
-  images,
-  selectedImg,
-  setselectedImg,
-  setHideThumbnail,
-}) {
+export default function PreviewScreen(props) {
   return ReactDOM.createPortal(
     <motion.div
       className="fixed w-full h-full z-10 flex justify-center items-center"
@@ -19,17 +14,9 @@ export default function PreviewScreen({
       initial="initial"
       animate="fullScreen"
       exit="initial"
-      onAnimationStart={() => setHideThumbnail(selectedImg.id)}
-      onAnimationComplete={(status) =>
-        status === "initial" && setHideThumbnail(null)
-      }
     >
-      <PreviewBackdrop setselectedImg={setselectedImg} />
-      <PreviewImage
-        images={images}
-        selectedImg={selectedImg}
-        setselectedImg={setselectedImg}
-      />
+      <PreviewBackdrop onClick={()=> props.setIdxSelected(null)} />
+      <FullscreenImage props={props} />
     </motion.div>,
     document.getElementById("modals")
   );

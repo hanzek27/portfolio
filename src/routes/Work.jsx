@@ -39,7 +39,7 @@ export default function Work() {
         {workButtons.map(button => {
           const Icon = button.icon
           return button.name === hover && (
-            <motion.div key={button.name} variants={reduceMotion ? reducedMotionObject : iconsAnimation} initial='initiate' animate='onScreen' exit='out' className='w-xl md:w-1/2 h-full  rounded-medium flex justify-center items-center absolute z-0'>
+            <motion.div key={button.text} variants={reduceMotion ? reducedMotionObject : iconsAnimation} initial='initiate' animate='onScreen' exit='out' className='w-xl md:w-1/2 h-full  rounded-medium flex justify-center items-center absolute z-0'>
               <Icon width='100%' fill='fill-accent-dim' />
             </motion.div>
           )
