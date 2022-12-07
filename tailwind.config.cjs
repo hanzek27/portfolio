@@ -35,8 +35,8 @@ module.exports = {
         letterSpacing: '0',
         fontWeight: '400',
       }],
-      'button': ['0.8rem', {
-        lineHeight: '0.8rem',
+      'button': ['1.2rem', {
+        lineHeight: '1.2rem',
         letterSpacing: '0',
         fontWeight: '400',
       }],
