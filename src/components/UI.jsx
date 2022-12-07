@@ -26,7 +26,7 @@ export default function UI() {
   const [nav, setNav] = useState(false)
 
   return (
-    <main className="max-h-full md:h-full grid grid-cols-layout grid-rows-layout bg-light dark:bg-dark overflow-hidden p-page-sm md:p-page-md lg:p-page-lg">
+    <main className="min-h-full md:h-full grid grid-cols-layout grid-rows-layout bg-light dark:bg-dark overflow-hidden p-page-sm md:p-page-md lg:p-page-lg">
       <div className="flex items-center justify-center">
         <BackButton />
       </div>
