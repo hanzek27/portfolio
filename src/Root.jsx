@@ -2,9 +2,9 @@ import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 //components
 import UI from "./components/UI";
-import Home from "./routes/Home";
-import Work from "./routes/Work";
-import Contacts from "./routes/Contacts";
+import Home from "./pages/Home";
+import Work from "./pages/Work";
+import Contacts from "./pages/Contacts";
 import Webdevelopement from "./pages/Webdevelopement";
 import GraphicDesign from "./pages/GraphicDesign";
 import WhatIlike from "./pages/WhatIlike";

@@ -19,5 +19,3 @@ export default function SwitchImageButton({ onClick, addStyles, direction }) {
     </motion.button>
   );
 }
-
-//shiftIndex(setCurrentIndex, maxIndex, "down")

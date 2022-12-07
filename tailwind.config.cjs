@@ -35,13 +35,13 @@ module.exports = {
         letterSpacing: '0',
         fontWeight: '400',
       }],
-      'button': ['1.1rem', {
-        lineHeight: '1.1rem',
+      'button': ['0.8rem', {
+        lineHeight: '0.8rem',
         letterSpacing: '0',
         fontWeight: '400',
       }],
       'paragraph': ['0.88rem', {
-        lineHeight: '1.88rem',
+        lineHeight: '1.5rem',
         letterSpacing: '0',
         fontWeight: '400',
       }],
@@ -87,7 +87,7 @@ module.exports = {
         'page-sm': '15px',
         'page-md': '60px',
         'page-lg': '90px',
-        'text-sm': '30px',
+        'text-sm': '20px',
         'text-md': '70px',
         'text-lg': '120px',
         'xs': '15px',
