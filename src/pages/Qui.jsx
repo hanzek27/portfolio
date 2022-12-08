@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import QUIpreview from "../assets/images/web-developement/QUI/QUI_preview.png";
 import UsedTechStack from "../components/UsedTechStack";
 import OutlineButton from "../components/buttons/OutlineButton";
@@ -10,6 +11,7 @@ import {
 } from "../components/animations/quiAnimation";
 
 export default function Qui() {
+  const navigate = useNavigate()
   return (
     <motion.div
       variants={orchestration}
@@ -35,7 +37,7 @@ export default function Qui() {
           >
             Simple trivia web aplication
           </motion.h4>
-          <OutlineButton text="go to project" />
+          <OutlineButton to='https://loquacious-douhua-f85fe1.netlify.app/' text="go to project" />
           <motion.p
             variants={textItems}
             className="font-main text-paragraph text-dim-light dark:text-dim-dark py-10"
