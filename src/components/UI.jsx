@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { useMotionContext, useModeContext, useUpdateContext } from '../hooks/useCreateWebContext'
 import modeSwitcher from "../functions/modeSwitcher";
 //components
