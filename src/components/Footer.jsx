@@ -9,7 +9,7 @@ export default function Footer() {
   const [setMotion, setMode] = useUpdateContext()
 
   return (
-    <footer>
+    <footer className='grid grid-cols-[30px_1fr_30px]'>
       <div className="flex items-center justify-center">
         <Cli width='30px' />
       </div>

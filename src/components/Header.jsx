@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AnimatePresence } from "framer-motion"
+import { AnimatePresence, useScroll } from "framer-motion"
 import { useLocation } from "react-router-dom";
 import BackButton from './buttons/BackButton'
 import { AnimatedText } from './animatedText'
@@ -7,18 +7,20 @@ import NavButton from './buttons/NavButton'
 import Nav from './navigation/Nav'
 
 export default function Header() {
+  const { scrollYProgress } = useScroll()
+  //scrollYProgress.onChange(val => console.log(val))
   const { pathname } = useLocation()
   const [nav, setNav] = useState(false)
   return (
-    <header className='grid grid-cols-[30px_1fr_30px] w-full h-sm'>
-      <div>
+    <header className='absolute z-[1] left-0 top-0 p-xs bg-dark md:static md:p-none md:bg-transparent w-full grid grid-cols-[30px_1fr_30px]'>
+      <div className='flex justify-center items-center'>
         <BackButton />
       </div>
-      <div>
+      <div className='flex justify-between items-center px-sm'>
         <AnimatedText text={`home${ pathname }`} />
         <span className="font-console text-console text-decor-light dark:text-decor-dark">{'<nav />'}</span>
       </div>
-      <div>
+      <div className='relative'>
         <NavButton onClick={()=> setNav(prev => !prev)} nav={nav} />
         <AnimatePresence key='navigation'>
           {nav && (<Nav setNav={setNav} />)}

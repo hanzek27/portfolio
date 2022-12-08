@@ -16,13 +16,13 @@ export default function Qui() {
       initial="initiate"
       animate="onScreen"
       exit="initiate"
-      className="grid grid-cols-1 grid-rows-[auto_1fr] md:grid-cols-2 md:grid-rows-none lg:grid-cols-[500px_1fr] w-full h-full"
+      className="grid grid-cols-1 grid-rows-[auto_1fr] md:grid-cols-2 md:grid-rows-none lg:grid-cols-[auto_1fr] gap-20 w-full h-full px-xs py-lg md:py-none md:px-md lg:px-lg"
     >
       <motion.div
         variants={sidesEnter}
-        className="flex justify-start items-start md:items-center pl-text-sm md:pl-text-md lg:pl-text-lg"
+        className="flex justify-start items-start md:items-center"
       >
-        <div>
+        <div className="max-w-[400px]">
           <motion.h2
             variants={textItems}
             className="font-main text-large text-main-light dark:text-main-dark"
@@ -56,7 +56,7 @@ export default function Qui() {
       </motion.div>
       <motion.div
         variants={sidesEnter}
-        className="row-start-1 md:col-start-2 px-sm py-md md:p-sm flex items-center justify-center"
+        className="row-start-1 md:col-start-2 flex items-center justify-center"
       >
         <img src={QUIpreview} className="w-full max-w-[500px]" />
       </motion.div>

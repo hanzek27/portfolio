@@ -10,7 +10,7 @@ import { workButtonOrchestration, workButtonAnimation, iconsAnimation } from '..
 
 export default function Work() {
   const { pathname } = useLocation()
-  const [setNav, useMotionContext] = useOutletContext()
+  const [useMotionContext] = useOutletContext()
   const reduceMotion = useMotionContext()
 
   const [hover, setHover] = useState('/webdev')
