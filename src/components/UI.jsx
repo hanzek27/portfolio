@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { useMotionContext, useModeContext, useUpdateContext } from '../hooks/useCreateWebContext'
+import modeSwitcher from "../functions/modeSwitcher";
 //components
 import LineNumbers from "./LineNumbers";
 import Header from "./Header";
 import Footer from "./Footer";
 
 export default function UI() {
-
+  const mode = useModeContext()
+  modeSwitcher(mode)
   return (
     <main className="min-h-full md:h-full bg-light dark:bg-dark overflow-hidden p-page-sm md:p-page-md lg:p-page-lg">
       <Header />
