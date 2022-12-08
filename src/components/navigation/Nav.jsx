@@ -2,10 +2,12 @@ import React, { useEffect } from 'react'
 import ConsoleButton from '../buttons/ConsoleButton'
 import { motion, useAnimationControls } from "framer-motion"
 import { navAnimation, navButtonsAnimation, reducedMotionObject } from '../animations/textAnimation'
-import { useMotionContext } from '../../hooks/useMotionContext'
+import { useMotionContext } from '../../hooks/useCreateWebContext'
+import { useUpdateContext } from '../../hooks/useCreateWebContext'
 
-export default function Nav({ changeMode, setNav, useMotionUpdateContext }) {
+export default function Nav({ setNav }) {
 
+  const [setMotion, setMode] = useUpdateContext()
   const controller = useAnimationControls()
   const reduceMotion = useMotionContext()
 
@@ -13,7 +15,7 @@ export default function Nav({ changeMode, setNav, useMotionUpdateContext }) {
     {action: '/', text: 'cd homepage'},
     {action: '/work', text: 'cd work'},
     {action: '/contacts', text: 'cd contact_me'},
-    {action: changeMode, text: 'mode dark || light'},
+    {action: setMode, text: 'mode dark || light'},
   ]
 
   const styles = {

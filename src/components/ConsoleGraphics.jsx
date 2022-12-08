@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { motion, useAnimationControls } from 'framer-motion';
-import { useMotionContext } from '../hooks/useMotionContext'
+import { useMotionContext } from '../hooks/useCreateWebContext'
 import { childrenDelay, consoleDecorationText, textAnimation, reducedMotionObject } from './animations/textAnimation';
 
 export default function ConsoleGraphics({classn, location}) {

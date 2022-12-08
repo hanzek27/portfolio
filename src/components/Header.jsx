@@ -21,7 +21,7 @@ export default function Header() {
       <div>
         <NavButton onClick={()=> setNav(prev => !prev)} nav={nav} />
         <AnimatePresence key='navigation'>
-          {nav && (<Nav changeMode={changeMode} setNav={setNav} useMotionUpdateContext={useMotionUpdateContext} />)}
+          {nav && (<Nav setNav={setNav} />)}
         </AnimatePresence>
       </div>
     </header>

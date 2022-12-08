@@ -1,12 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import { useMotionUpdateContext, useMotionContext } from '../../hooks/useMotionContext'
+import { useUpdateContext, useMotionContext } from '../../hooks/useCreateWebContext'
 
 export default function MotionToggle() {
   const reducedMotion = useMotionContext()
-  const updateMotionContext = useMotionUpdateContext()
+  const [setMotion, setMode] = useUpdateContext()
   return (
-    <motion.button onClick={updateMotionContext} className={`relative bg-decor-light dark:bg-accent-dim w-[50px] h-[26px] rounded-lg flex items-center`}>
+    <motion.button onClick={setMotion} className={`relative bg-decor-light dark:bg-accent-dim w-[50px] h-[26px] rounded-lg flex items-center`}>
       {reducedMotion ? (
         <motion.div layoutId='reduceMotionToggle' className='absolute top-[3px] right-[3px] w-toggleThumb h-toggleThumb bg-accent-blue rounded-full'></motion.div>
       ) : (

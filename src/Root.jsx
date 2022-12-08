@@ -9,12 +9,12 @@ import Webdevelopement from "./pages/Webdevelopement";
 import GraphicDesign from "./pages/GraphicDesign";
 import WhatIlike from "./pages/WhatIlike";
 
-import CreateMotionContext from "./hooks/useMotionContext";
+import CreateWebContext from "./hooks/useCreateWebContext";
 
 export default function Root() {
   const location = useLocation();
   return (
-    <CreateMotionContext>
+    <CreateWebContext>
       <AnimatePresence mode="wait" key="pages">
         <Routes location={location} key={location.pathname}>
           <Route 
@@ -31,6 +31,6 @@ export default function Root() {
           <Route path='/*' element={<Navigate to="/" replace={true} />} />
         </Routes>
       </AnimatePresence>
-    </CreateMotionContext>
+    </CreateWebContext>
   );
 }

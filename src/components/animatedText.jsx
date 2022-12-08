@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { motion, useAnimationControls } from 'framer-motion';
-import { useMotionContext } from '../hooks/useMotionContext'
+import { useMotionContext } from '../hooks/useCreateWebContext'
 import { textAnimation, childrenDelay, reducedMotionObject } from './animations/textAnimation';
 
 export default function AnimatedHeadline({text}) {
