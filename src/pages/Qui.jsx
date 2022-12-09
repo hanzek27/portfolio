@@ -55,7 +55,7 @@ export default function Qui() {
         variants={imageAnimation}
         className="row-start-1 md:col-start-2 flex items-center justify-center"
       >
-        <img src={QUIpreview} className="w-full max-w-[500px]" />
+        <motion.img src={QUIpreview} className="relative w-full max-w-[500px]" />
       </motion.div>
     </motion.div>
   );
