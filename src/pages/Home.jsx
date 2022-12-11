@@ -17,7 +17,7 @@ export default function Home() {
   const { pathname } = useLocation();
 
   return (
-    <section className="grid grid-cols-1  w-full h-full relative">
+    <section className="w-full h-full relative">
       <motion.article className="max-w-[450px] flex flex-col justify-center pl-text-sm md:pl-text-md lg:pl-text-lg">
         <AnimatedHeadline text="Hey nice to meet you I am Honza..." />
         <AnimatedSubhead text="graphic designer and web developer asi, co ja kurva vim" />
