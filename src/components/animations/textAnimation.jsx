@@ -28,13 +28,13 @@ export const childrenDelay = {
   onScreen: {
     transition: {
       when: 'beforeChildren',
-      staggerChildren: 0.08,
+      staggerChildren: 0.05,
     }
   },
   out: {
     transition: {
       when: 'afterChildren',
-      staggerChildren: 0.02,
+      staggerChildren: 0.01,
     }
   }
 }

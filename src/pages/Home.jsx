@@ -1,14 +1,11 @@
-import React, { useEffect, useContext } from "react";
+import React from "react";
 import { useOutletContext, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import {
-  reducedMotionObject,
-  textAnimation,
-} from "../components/animations/textAnimation";
 
 //components
 import AnimatedHeadline, { AnimatedSubhead } from "../components/animatedText";
 import ConsoleGraphics from "../components/ConsoleGraphics";
+import OutlineRouteButton from "../components/buttons/OutlineRouteButton";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -17,23 +14,15 @@ export default function Home() {
   const { pathname } = useLocation();
 
   return (
-    <section className="w-full h-full relative">
-      <motion.article className="max-w-[450px] flex flex-col justify-center pl-text-sm md:pl-text-md lg:pl-text-lg">
+    <section className="w-full h-full relative flex items-center">
+      <motion.div className="max-w-[450px] flex flex-col justify-center pl-text-sm md:pl-text-md lg:pl-text-lg">
         <AnimatedHeadline text="Hey nice to meet you I am Honza..." />
-        <AnimatedSubhead text="graphic designer and web developer asi, co ja kurva vim" />
-        <motion.button
-          variants={reduceMotion ? reducedMotionObject : textAnimation}
-          initial="initiate"
-          animate="onScreen"
-          exit="out"
-          onClick={() => navigate("/contacts")}
-          className={`${
-            !reduceMotion && "animate-bounce"
-          } font-console text-button text-main-light dark:text-main-dark border py-4 px-7 w-max rounded-medium mt-md`}
-        >
-          contact me
-        </motion.button>
-      </motion.article>
+        <AnimatedSubhead text="graphic designer and web developer" />
+        <div className="mt-md flex flex-wrap gap-xs">
+          <OutlineRouteButton text='contacts' to='/contacts' icon='contacts' />
+          <OutlineRouteButton text='work' to='/work' icon='work' />
+        </div>
+      </motion.div>
       <ConsoleGraphics
         location={pathname}
         classn="absolute bottom-sm left-sm"

@@ -21,8 +21,7 @@ export default function Work() {
     {action: '/work/whatilike', name: '/whatilike', text: 'what_I_like', icon: Heart},
   ]
   return (
-    <motion.section className='h-full w-full grid grid-rows-4 grid-cols-2'>
-      <ConsoleGraphics location={pathname} classn='row-start-4 pl-text-sm mt-sm' />
+    <motion.section className='relative h-full w-full grid grid-rows-4 grid-cols-2'>
       <article className='col-span-2 row-span-1 row-start-3 md:col-span-1 md:row-span-2 md:row-start-2   pl-text-sm md:pl-text-md lg:pl-text-lg  flex flex-col justify-center'> 
       
         <motion.div variants={reduceMotion ? reducedMotionObject : workButtonOrchestration} initial='initiate' animate='onScreen' exit='out' className='flex flex-col items-left gap-5 w-max'>
@@ -34,7 +33,6 @@ export default function Work() {
           ))}
         </motion.div>
       </article>
-
       <div className='col-span-2 row-start-1 row-span-2 md:col-span-1 md:col-start-2 md:row-span-2 md:row-start-2 flex justify-center items-center relative pr-sm md:pr-none'>
         {workButtons.map(button => {
           const Icon = button.icon
@@ -45,6 +43,10 @@ export default function Work() {
           )
         })}
       </div>
+      <ConsoleGraphics
+        location={pathname}
+        classn="absolute bottom-sm left-sm"
+      />
     </motion.section>
   )
 }

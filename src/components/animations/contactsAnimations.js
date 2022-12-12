@@ -22,7 +22,7 @@ export const orchestration = {
 export const itemEnterAnimation = {
   initiate: {
     opacity: 0,
-    x: 200,
+    x: 50,
   },
   onScreen: {
     opacity: 1,
@@ -30,6 +30,6 @@ export const itemEnterAnimation = {
   },
   out: {
     opacity: 0,
-    x: 200,
+    x: 50,
   }
 }

@@ -50,9 +50,7 @@ export default function Nav({ setNav }) {
             return (
               <ConsoleButton
                 key={button.text}
-                itemsAnimation={
-                  reduceMotion ? reducedMotionObject : navButtonsAnimation
-                }
+                itemsAnimation={reduceMotion ? reducedMotionObject : navButtonsAnimation}
                 side={side}
                 action={button.action}
                 text={button.text}
