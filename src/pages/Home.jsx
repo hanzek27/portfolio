@@ -9,7 +9,8 @@ import OutlineRouteButton from "../components/buttons/OutlineRouteButton";
 
 export default function Home() {
   const navigate = useNavigate();
-  const [useMotionContext, useModeContext, useUpdateContext] = useOutletContext();
+  const [useMotionContext, useModeContext, useUpdateContext] =
+    useOutletContext();
   const reduceMotion = useMotionContext();
   const { pathname } = useLocation();
 
@@ -19,8 +20,8 @@ export default function Home() {
         <AnimatedHeadline text="Hey nice to meet you I am Honza..." />
         <AnimatedSubhead text="graphic designer and web developer" />
         <div className="mt-md flex flex-wrap gap-xs">
-          <OutlineRouteButton text='contacts' to='/contacts' icon='contacts' />
-          <OutlineRouteButton text='work' to='/work' icon='work' />
+          <OutlineRouteButton text="contacts" to="/contacts" icon="contacts" />
+          <OutlineRouteButton text="work" to="/work" icon="work" />
         </div>
       </motion.div>
       <ConsoleGraphics

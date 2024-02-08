@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import { motion } from "framer-motion";
 
-export default function OutlineButton({to, text}) {
+export default function OutlineButton({ to, text, ...rest }) {
   return (
-    <a href={to} className='py-3 px-8 rounded-medium border border-accent-blue text-console font-console text-accent-blue w-full md:w-max'>
+    <motion.a
+      target="_blank"
+      href={to}
+      {...rest}
+      className="py-3 px-8 rounded-medium border border-accent-blue text-console font-console text-accent-blue w-max md:w-max"
+    >
       {text}
-    </a>
-  )
+    </motion.a>
+  );
 }

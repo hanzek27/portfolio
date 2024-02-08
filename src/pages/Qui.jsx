@@ -23,23 +23,19 @@ export default function Qui() {
         className="flex justify-start items-start md:items-center"
       >
         <div className="max-w-[400px]">
-          <motion.h2
-            className="font-main text-large text-main-light dark:text-main-dark"
-          >
+          <motion.h2 className="font-main text-large text-main-light dark:text-main-dark">
             QUI
           </motion.h2>
-          <motion.h4
-            className="font-main text-medium text-main-light dark:text-main-dark pt-5 pb-10"
-          >
+          <motion.h4 className="font-main text-medium text-main-light dark:text-main-dark pt-5 pb-10">
             Simple trivia web aplication
           </motion.h4>
-          <OutlineButton to='https://loquacious-douhua-f85fe1.netlify.app/' text="go to project" />
-          <motion.p
-            className="font-main text-paragraph text-dim-light dark:text-dim-dark py-10"
-          >
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla est.
-            Aliquam erat volutpat. Etiam ligula pede, sagittis quis, interdum
-            ultricies, scelerisque eu.
+          <OutlineButton
+            to="https://loquacious-douhua-f85fe1.netlify.app/"
+            text="Try it out"
+          />
+          <motion.p className="font-main text-paragraph text-dim-light dark:text-dim-dark py-10">
+            Small progressive web application for creating editing and playing
+            trivia games.
           </motion.p>
           <UsedTechStack
             react
@@ -55,7 +51,10 @@ export default function Qui() {
         variants={imageAnimation}
         className="row-start-1 md:col-start-2 flex items-center justify-center"
       >
-        <motion.img src={QUIpreview} className="relative w-full max-w-[500px]" />
+        <motion.img
+          src={QUIpreview}
+          className="relative w-full max-w-[500px]"
+        />
       </motion.div>
     </motion.div>
   );

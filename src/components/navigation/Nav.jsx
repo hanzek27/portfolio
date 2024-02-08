@@ -18,13 +18,15 @@ export default function Nav({ setNav }) {
     { action: "/", text: "cd homepage" },
     { action: "/work", text: "cd work" },
     { action: "/contacts", text: "cd contact_me" },
-    { action: setMode, text: "mode dark || light" },
+    //{ action: setMode, text: "mode dark || light" },
   ];
 
   const styles = {
     size: "w-navWidth md:w-[400px]",
-    design: "py-lg flex flex-col items-center rounded-medium backdrop-blur-md ring-2 ring-inset z-[10]",
-    color: "bg-nav-light dark:bg-nav-dark dark:ring-decor-dark ring-decor-light",
+    design:
+      "py-lg flex flex-col items-center rounded-medium backdrop-blur-md ring-2 ring-inset z-[10]",
+    color:
+      "bg-nav-light dark:bg-nav-dark dark:ring-decor-dark ring-decor-light",
     position: "fixed top-md right md:absolute md:top-[40px] md:right-[40px] ",
   };
 
@@ -50,7 +52,9 @@ export default function Nav({ setNav }) {
             return (
               <ConsoleButton
                 key={button.text}
-                itemsAnimation={reduceMotion ? reducedMotionObject : navButtonsAnimation}
+                itemsAnimation={
+                  reduceMotion ? reducedMotionObject : navButtonsAnimation
+                }
                 side={side}
                 action={button.action}
                 text={button.text}
@@ -63,7 +67,7 @@ export default function Nav({ setNav }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{duration: 1}}
+        transition={{ duration: 1 }}
         onClick={() => setNav(false)}
         className="fixed block md:hidden z-[2] inset-0 bg-nav-light dark:bg-nav-dark"
       />

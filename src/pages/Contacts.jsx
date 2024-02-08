@@ -6,6 +6,7 @@ import {
   itemEnterAnimation,
 } from "../components/animations/contactsAnimations";
 import reducedAnimations from "../components/animations/reducedAnimations";
+import OutlineButton from "../components/buttons/OutlineButton";
 
 //components
 import AnimatedHeadline from "../components/animatedText";
@@ -30,16 +31,22 @@ export default function Work() {
           variants={reducedMotion ? reducedAnimations : itemEnterAnimation}
           className="font-console text-main-light dark:text-main-dark text-console flex items-center gap-4"
         >
-          <Phone width='20px' />
+          <Phone width="20px" />
           606 625 459
         </motion.p>
         <motion.p
           variants={reducedMotion ? reducedAnimations : itemEnterAnimation}
           className="font-console text-main-light dark:text-main-dark text-console flex items-center gap-4"
         >
-          <Email width='20px' />
+          <Email width="20px" />
           honzastepan27@gmail.com
         </motion.p>
+        <OutlineButton
+          variants={reducedMotion ? reducedAnimations : itemEnterAnimation}
+          to={"src/assets/CV/Jan_Stepan_cv.pdf"}
+          text="Download CV"
+          download="Jan_Stepan_cv.pdf"
+        />
       </motion.article>
       <ConsoleGraphics
         location={pathname}
