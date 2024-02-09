@@ -32,7 +32,7 @@ export default function WebDev() {
               </div>
               <div className="flex justify-center">
                 <img
-                  src={`/src/assets/images/web-developement/${project.img}`}
+                  src={`/image/${project.img}`}
                   alt={project.shortDes}
                   className="w-52"
                 />
