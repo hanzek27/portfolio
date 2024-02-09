@@ -25,5 +25,15 @@
     "projectURL": "https://tranquil-jelly-c164af.netlify.app/",
     "description": "Data extractor helping with processing multiple xls files at one, pulling together filtered data.",
     "techStack": ["Figma", "React", "Tailwind", "Vite"]
+  },
+  {
+    "name": "New Project",
+    "shortDes": "Excell file data extractor.",
+    "background": "#BFBFC8",
+    "fontColor": "#212936",
+    "img": "XLSX/mockup.png",
+    "projectURL": "https://tranquil-jelly-c164af.netlify.app/",
+    "description": "Data extractor helping with processing multiple xls files at one, pulling together filtered data.",
+    "techStack": ["Figma", "React", "Tailwind", "Figma"]
   }
 ]
